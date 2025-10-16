@@ -6,13 +6,14 @@ def load_data(file_path):
     """Load data from parquet file"""
     return pd.read_csv(file_path)
 
-def get_top_spenders_by_month(df, top_n=10, values='customer'):
+def get_top_spenders_by_month(df, top_n=10, values='customer_no'):
     """
     Calculate top spenders for each month
     
     Args:
         df: DataFrame with sales data
         top_n: Number of top spenders to return per month
+        values: Content of table, ['customer_no', 'amount']
         
     Returns:
         DataFrame with year_month and columns for each rank (1st through 10th)
